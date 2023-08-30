@@ -5,7 +5,7 @@ export function Display({ input }) {
     <div className={css.display}>
       <input
         className={css.input}
-        // placeholder="0"
+        placeholder="0"
         type="text"
         maxLength={16}
         autoComplete="off"
