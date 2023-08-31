@@ -1,12 +1,14 @@
 import css from "./Buttons.module.css";
 
-export function Buttons({ inputHandler }) {
+export function Buttons({ inputHandler, operationHandler, equalHandler }) {
   return (
     <div className={css.buttons}>
       <button className={css.calcBtn}>CE</button>
       <button className={css.calcBtn}>C</button>
       <button className={css.calcBtn}>⌫</button>
-      <button className={css.mathBtn}>÷</button>
+      <button className={css.mathBtn} onClick={operationHandler}>
+        ÷
+      </button>
       <button className={css.numberBtn} onClick={inputHandler}>
         7
       </button>
@@ -16,7 +18,9 @@ export function Buttons({ inputHandler }) {
       <button className={css.numberBtn} onClick={inputHandler}>
         9
       </button>
-      <button className={css.mathBtn}>x</button>
+      <button className={css.mathBtn} onClick={operationHandler}>
+        x
+      </button>
       <button className={css.numberBtn} onClick={inputHandler}>
         4
       </button>
@@ -26,7 +30,9 @@ export function Buttons({ inputHandler }) {
       <button className={css.numberBtn} onClick={inputHandler}>
         6
       </button>
-      <button className={css.mathBtn}>-</button>
+      <button className={css.mathBtn} onClick={operationHandler}>
+        -
+      </button>
       <button className={css.numberBtn} onClick={inputHandler}>
         1
       </button>
@@ -36,11 +42,15 @@ export function Buttons({ inputHandler }) {
       <button className={css.numberBtn} onClick={inputHandler}>
         3
       </button>
-      <button className={css.mathBtn}>+</button>
+      <button className={css.mathBtn} onClick={operationHandler}>
+        +
+      </button>
       <button className={css.calcBtn}>±</button>
       <button className={css.numberBtn}>0</button>
       <button className={css.calcBtn}>,</button>
-      <button className={css.mathBtn}>=</button>
+      <button className={css.mathBtn} onClick={equalHandler}>
+        =
+      </button>
     </div>
   );
 }
