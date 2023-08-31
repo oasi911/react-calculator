@@ -7,8 +7,8 @@ export function Calculator() {
   // const [answer, setAnswer] = useState("");
 
   function inputHandler(e) {
-    let action = e.target.innerText;
-    setInput(action);
+    let digit = e.target.innerText;
+    setInput((prevDigit) => prevDigit + digit);
   }
 
   return (
