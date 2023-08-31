@@ -10,6 +10,7 @@ export function Display({ input }) {
         maxLength={16}
         autoComplete="off"
         value={input}
+        readOnly
       ></input>
     </div>
   );

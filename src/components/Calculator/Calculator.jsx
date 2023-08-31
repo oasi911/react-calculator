@@ -32,11 +32,29 @@ export function Calculator() {
         case "-":
           total = num1 - num2;
           break;
-        case "*":
+        case "x":
           total = num1 * num2;
           break;
         case "/":
           total = num1 / num2;
+          break;
+        case "CE":
+          setInput("");
+          break;
+        case "C":
+          setInput("");
+          setResult("");
+          break;
+        case "⌫":
+          setInput(input.slice(0, -1));
+          break;
+        case "±":
+          parseFloat(input) < 0
+            ? setInput(Math.abs(input))
+            : setInput(-Math.abs(input));
+          break;
+        case ".":
+          setInput(input + ".");
           break;
         default:
           break;
