@@ -19,6 +19,28 @@ export function Calculator() {
     setInput("");
   }
 
+  function ceHandler() {
+    setInput("");
+  }
+
+  function cHandler() {
+    setInput("");
+    setOperation(null);
+    setResult("");
+  }
+
+  function backspaceHandler() {
+    setInput(input.slice(0, -1));
+  }
+
+  function toggleHandler() {
+    setInput(input * -1);
+  }
+
+  function dotHandler() {
+    setInput(input + ".");
+  }
+
   function equalHandler() {
     if (operation && input !== "") {
       const num1 = parseFloat(result);
@@ -38,24 +60,6 @@ export function Calculator() {
         case "/":
           total = num1 / num2;
           break;
-        case "CE":
-          setInput("");
-          break;
-        case "C":
-          setInput("");
-          setResult("");
-          break;
-        case "⌫":
-          setInput(input.slice(0, -1));
-          break;
-        case "±":
-          parseFloat(input) < 0
-            ? setInput(Math.abs(input))
-            : setInput(-Math.abs(input));
-          break;
-        case ".":
-          setInput(input + ".");
-          break;
         default:
           break;
       }
@@ -71,6 +75,11 @@ export function Calculator() {
         inputHandler={inputHandler}
         operationHandler={operationHandler}
         equalHandler={equalHandler}
+        ceHandler={ceHandler}
+        cHandler={cHandler}
+        backspaceHandler={backspaceHandler}
+        toggleHandler={toggleHandler}
+        dotHandler={dotHandler}
       ></Buttons>
     </>
   );

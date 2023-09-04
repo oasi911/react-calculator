@@ -7,7 +7,7 @@ export function Display({ input }) {
         className={css.input}
         placeholder="0"
         type="text"
-        maxLength={16}
+        maxLength={14}
         autoComplete="off"
         value={input}
         readOnly

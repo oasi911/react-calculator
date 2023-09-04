@@ -1,15 +1,24 @@
 import css from "./Buttons.module.css";
 
-export function Buttons({ inputHandler, operationHandler, equalHandler }) {
+export function Buttons({
+  inputHandler,
+  operationHandler,
+  equalHandler,
+  ceHandler,
+  cHandler,
+  backspaceHandler,
+  toggleHandler,
+  dotHandler,
+}) {
   return (
     <div className={css.buttons}>
-      <button className={css.calcBtn} onClick={operationHandler}>
+      <button className={css.calcBtn} onClick={ceHandler}>
         CE
       </button>
-      <button className={css.calcBtn} onClick={operationHandler}>
+      <button className={css.calcBtn} onClick={cHandler}>
         C
       </button>
-      <button className={css.calcBtn} onClick={operationHandler}>
+      <button className={css.calcBtn} onClick={backspaceHandler}>
         ⌫
       </button>
       <button className={css.mathBtn} onClick={operationHandler}>
@@ -51,13 +60,13 @@ export function Buttons({ inputHandler, operationHandler, equalHandler }) {
       <button className={css.mathBtn} onClick={operationHandler}>
         +
       </button>
-      <button className={css.calcBtn} onClick={operationHandler}>
+      <button className={css.calcBtn} onClick={toggleHandler}>
         ±
       </button>
       <button className={css.numberBtn} onClick={inputHandler}>
         0
       </button>
-      <button className={css.calcBtn} onClick={operationHandler}>
+      <button className={css.calcBtn} onClick={dotHandler}>
         .
       </button>
       <button className={css.mathBtn} onClick={equalHandler}>
