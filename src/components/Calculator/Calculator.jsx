@@ -6,6 +6,7 @@ export function Calculator() {
   const [input, setInput] = useState("");
   const [operation, setOperation] = useState(null);
   const [result, setResult] = useState("");
+  const [secInput, setSecInput] = useState("");
 
   function inputHandler(e) {
     const digit = e.target.innerText;
@@ -17,6 +18,7 @@ export function Calculator() {
     setOperation(opDigit);
     setResult(input);
     setInput("");
+    setSecInput(input + " " + opDigit);
   }
 
   function ceHandler() {
@@ -65,12 +67,13 @@ export function Calculator() {
       }
 
       setInput(total);
+      setSecInput("");
     }
   }
 
   return (
     <>
-      <Display input={input}></Display>
+      <Display input={input} secInput={secInput}></Display>
       <Buttons
         inputHandler={inputHandler}
         operationHandler={operationHandler}
