@@ -66,7 +66,7 @@ export function Calculator() {
           break;
       }
 
-      setInput(total);
+      setInput(total.toString());
       setSecInput("");
     }
   }
