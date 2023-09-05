@@ -1,6 +1,6 @@
 import css from "./Display.module.css";
 
-export function Display({ input, secInput }) {
+export function Display({ input, secInput, historyHandler }) {
   return (
     <div className={css.display}>
       <input
@@ -11,7 +11,7 @@ export function Display({ input, secInput }) {
         value={secInput}
         readOnly
       ></input>
-      <button className={css.history} type="button">
+      <button className={css.history} type="button" onClick={historyHandler}>
         ⟳
       </button>
       <input

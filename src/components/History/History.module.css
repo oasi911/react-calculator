@@ -1,0 +1,12 @@
+.historyOpen {
+  height: 270px;
+  width: 320px;
+  background-color: #00000099;
+  /* position: absolute; */
+  /* top: 428px; */
+}
+
+.historyClose {
+  display: none;
+  visibility: hidden;
+}

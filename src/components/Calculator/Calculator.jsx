@@ -1,5 +1,6 @@
 import { Display } from "../Display/Display";
 import { Buttons } from "../Buttons/Buttons";
+import { History } from "../History/History";
 import { useState } from "react";
 
 export function Calculator() {
@@ -7,6 +8,7 @@ export function Calculator() {
   const [operation, setOperation] = useState(null);
   const [result, setResult] = useState("");
   const [secInput, setSecInput] = useState("");
+  const [toggleHistory, setToggleHistory] = useState(false);
 
   function inputHandler(e) {
     const digit = e.target.innerText;
@@ -71,9 +73,17 @@ export function Calculator() {
     }
   }
 
+  function historyHandler() {
+    setToggleHistory(!toggleHistory);
+  }
+
   return (
     <>
-      <Display input={input} secInput={secInput}></Display>
+      <Display
+        input={input}
+        secInput={secInput}
+        historyHandler={historyHandler}
+      ></Display>
       <Buttons
         inputHandler={inputHandler}
         operationHandler={operationHandler}
@@ -84,6 +94,7 @@ export function Calculator() {
         toggleHandler={toggleHandler}
         dotHandler={dotHandler}
       ></Buttons>
+      <History toggleHistory={toggleHistory}></History>
     </>
   );
 }
