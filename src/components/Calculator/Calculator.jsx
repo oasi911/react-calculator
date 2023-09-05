@@ -9,6 +9,7 @@ export function Calculator() {
   const [result, setResult] = useState("");
   const [secInput, setSecInput] = useState("");
   const [toggleHistory, setToggleHistory] = useState(false);
+  const [history, setHistory] = useState([]);
 
   function inputHandler(e) {
     const digit = e.target.innerText;
@@ -67,6 +68,13 @@ export function Calculator() {
         default:
           break;
       }
+      const operationString = `${result} ${operation} ${input} = ${total}`;
+      // console.log(operationString);
+      setHistory([...history, operationString]);
+      localStorage.setItem(
+        "calculatorHistory",
+        JSON.stringify([...history, operationString])
+      );
 
       setInput(total.toString());
       setSecInput("");
