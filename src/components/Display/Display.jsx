@@ -11,6 +11,9 @@ export function Display({ input, secInput }) {
         value={secInput}
         readOnly
       ></input>
+      <button className={css.history} type="button">
+        ⟳
+      </button>
       <input
         className={css.input}
         placeholder="0"

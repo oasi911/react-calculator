@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
-  /* margin-top: 200px; */
   height: 270px;
   width: 320px;
   background-color: #666;

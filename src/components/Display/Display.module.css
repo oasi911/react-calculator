@@ -12,9 +12,10 @@
 
 .input {
   padding: 0px 10px;
-  background-color: #00000000;
+  background-color: transparent;
   color: #fff;
   border: none;
+  outline: none;
   height: 50px;
   max-width: 300px;
   font-size: 40px;
@@ -23,11 +24,21 @@
 
 .secondaryInput {
   padding: 0px 10px;
-  background-color: #00000000;
+  background-color: transparent;
   color: #c9c9c9;
   border: none;
+  outline: none;
   height: 20px;
   max-width: 300px;
   font-size: 20px;
   text-align: right;
+  cursor: default;
+}
+
+.history {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
 }
