@@ -18,13 +18,17 @@ export function History({ toggleHistory }) {
     <>
       <div className={historyClassName}>
         {/* <h2>history</h2> */}
-        <ul className={css.list}>
-          {history.map((item, index) => (
-            <li key={index} className={css.item}>
-              {item}
-            </li>
-          ))}
-        </ul>
+        {history.length === 0 ? (
+          <p className={css.noHistory}>No history yet</p>
+        ) : (
+          <ul className={css.list}>
+            {history.map((item, index) => (
+              <li key={index} className={css.item}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
         <button className={css.clearBtn} onClick={clearHistory}>
           🗑
         </button>
