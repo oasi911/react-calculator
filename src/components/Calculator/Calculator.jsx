@@ -1,7 +1,7 @@
 import { Display } from "../Display/Display";
 import { Buttons } from "../Buttons/Buttons";
 import { History } from "../History/History";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Calculator() {
   const [input, setInput] = useState("");
@@ -9,7 +9,14 @@ export function Calculator() {
   const [result, setResult] = useState("");
   const [secInput, setSecInput] = useState("");
   const [toggleHistory, setToggleHistory] = useState(false);
-  const [history, setHistory] = useState([]);
+  const [history, setHistory] = useState(() => {
+    const storedHistory = localStorage.getItem("calculatorHistory");
+    return storedHistory ? JSON.parse(storedHistory) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("calculatorHistory", JSON.stringify(history));
+  }, [history]);
 
   function inputHandler(e) {
     const digit = e.target.innerText;
@@ -69,12 +76,7 @@ export function Calculator() {
           break;
       }
       const operationString = `${result} ${operation} ${input} = ${total}`;
-      // console.log(operationString);
       setHistory([...history, operationString]);
-      localStorage.setItem(
-        "calculatorHistory",
-        JSON.stringify([...history, operationString])
-      );
 
       setInput(total.toString());
       setSecInput("");
@@ -83,6 +85,11 @@ export function Calculator() {
 
   function historyHandler() {
     setToggleHistory(!toggleHistory);
+  }
+
+  function clearHistory() {
+    setHistory([]);
+    localStorage.clear();
   }
 
   return (
@@ -102,7 +109,11 @@ export function Calculator() {
         toggleHandler={toggleHandler}
         dotHandler={dotHandler}
       ></Buttons>
-      <History toggleHistory={toggleHistory}></History>
+      <History
+        toggleHistory={toggleHistory}
+        history={history}
+        clearHistory={clearHistory}
+      ></History>
     </>
   );
 }
