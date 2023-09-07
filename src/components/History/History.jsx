@@ -2,10 +2,13 @@ import css from "./History.module.css";
 
 export function History({ toggleHistory, history, clearHistory }) {
   const historyClassName = toggleHistory ? css.historyOpen : css.historyClose;
+  const historySecClassName = toggleHistory
+    ? css.historySecOpen
+    : css.historySecClose;
 
   return (
-    <>
-      <div className={historyClassName}>
+    <div className={historyClassName}>
+      <div className={historySecClassName}>
         {history.length === 0 ? (
           <p className={css.noHistory}>No history yet</p>
         ) : (
@@ -21,6 +24,6 @@ export function History({ toggleHistory, history, clearHistory }) {
           🗑
         </button>
       </div>
-    </>
+    </div>
   );
 }

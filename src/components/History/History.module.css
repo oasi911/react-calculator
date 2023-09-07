@@ -1,13 +1,34 @@
 .historyOpen {
   position: relative;
+  top: -270px;
+  opacity: 1;
   height: 270px;
   width: 320px;
-  background-color: #00000099;
+  overflow: hidden;
 }
 
 .historyClose {
-  display: none;
-  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.historySecOpen {
+  position: absolute;
+  top: 270px;
+  height: 100%;
+  width: 100%;
+  background-color: #181818f5;
+  opacity: 1;
+  transform: translateY(-100%);
+  transition-duration: 300ms;
+}
+
+.historySecClose {
+  position: absolute;
+  top: 270px;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
 }
 
 .list {
