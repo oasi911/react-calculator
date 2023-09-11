@@ -9,9 +9,12 @@ export function Buttons({
   backspaceHandler,
   toggleHandler,
   dotHandler,
+  toggleHistory,
 }) {
+  const buttonsStyle = toggleHistory ? css.hiddenButtons : css.buttons;
+
   return (
-    <div className={css.buttons}>
+    <div className={buttonsStyle}>
       <button className={css.calcBtn} onClick={ceHandler}>
         CE
       </button>

@@ -5,6 +5,18 @@
   height: 270px;
   width: 320px;
   background-color: #666;
+  opacity: 1;
+}
+
+.hiddenButtons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  height: 270px;
+  width: 320px;
+  background-color: #666;
+  transition: 1000ms;
+  opacity: 0;
 }
 
 .calcBtn,

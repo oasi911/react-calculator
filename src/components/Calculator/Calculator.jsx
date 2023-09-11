@@ -108,6 +108,7 @@ export function Calculator() {
         backspaceHandler={backspaceHandler}
         toggleHandler={toggleHandler}
         dotHandler={dotHandler}
+        toggleHistory={toggleHistory}
       ></Buttons>
       <History
         toggleHistory={toggleHistory}
